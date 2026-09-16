@@ -213,7 +213,8 @@ body.nav-open .site-header{ backdrop-filter:none; }
 .fact .fact-label{ font-size:.83rem; color:var(--ink); opacity:.68; max-width:18ch; }
 
 /* Photo hero — circular, halo, orbit ring (home) */
-.photo-hero{ position:relative; width:100%; max-width:460px; aspect-ratio:1/1; margin:0 auto; overflow:hidden; }
+.photo-hero-wrap{ position:relative; width:100%; max-width:460px; margin:0 auto; }
+.photo-hero{ position:relative; width:100%; aspect-ratio:1/1; overflow:hidden; }
 .photo-hero .halo{ position:absolute; inset:6%; border-radius:50%; background: var(--yellow); filter: blur(2px); }
 .photo-hero img{
   position:relative; width:88%; aspect-ratio:1/1; object-fit:cover; border-radius:50%;
