@@ -242,8 +242,9 @@ body.nav-open .site-header{ backdrop-filter:none; }
 @media (max-width:700px){ .photo-band{ aspect-ratio: 16/9; max-height:200px; } }
 
 /* Blob card — tarjeta fotográfica orgánica y juguetona para las cabeceras de capítulo */
+.blob-wrap{ position:relative; width:100%; max-width:320px; margin:0 auto; }
 .blob-card{
-  position:relative; width:100%; max-width:320px; aspect-ratio:1/1; margin:0 auto;
+  position:relative; width:100%; aspect-ratio:1/1;
   border-radius: 44% 56% 48% 52% / 55% 42% 58% 45%;
   box-shadow: 0 20px 45px rgba(23,37,42,0.16);
   transform: rotate(-4deg);
@@ -271,7 +272,7 @@ body.nav-open .site-header{ backdrop-filter:none; }
 .blob-ink{ border-color: var(--ink); } .blob-ink .blob-ring{ border-color: rgba(23,37,42,.4); }
 .blob-yellow{ border-color: var(--yellow); } .blob-yellow .blob-ring{ border-color: rgba(255,209,102,.7); }
 .blob-teal{ border-color: #1D7A8C; } .blob-teal .blob-ring{ border-color: rgba(29,122,140,.5); }
-@media (max-width:700px){ .blob-card{ max-width:220px; } }
+@media (max-width:700px){ .blob-wrap{ max-width:220px; } }
 
 /* Gallery grid */
 .gallery{ display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; }
