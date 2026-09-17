@@ -6,6 +6,7 @@
 (function () {
   "use strict";
   const img = document.getElementById("pose-photo");
+  const bgImg = document.getElementById("pose-photo-bg");
   if (!img) return;
 
   const POSES = [
@@ -61,13 +62,18 @@
   function render(i) {
     const p = POSES[i];
     img.classList.remove("loaded");
+    if (bgImg) bgImg.classList.remove("loaded");
     const swap = () => {
       img.src = p.src;
       img.alt = p.alt;
+      if (bgImg) bgImg.src = p.src;
     };
     // pequeño crossfade: espera a que la imagen cargue antes de mostrarla
     const loader = new Image();
-    loader.onload = () => { swap(); requestAnimationFrame(() => img.classList.add("loaded")); };
+    loader.onload = () => {
+      swap();
+      requestAnimationFrame(() => { img.classList.add("loaded"); if (bgImg) bgImg.classList.add("loaded"); });
+    };
     loader.onerror = () => { swap(); };
     loader.src = p.src;
 
