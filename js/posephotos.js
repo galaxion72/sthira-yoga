@@ -65,6 +65,14 @@
   const mobileMQ = window.matchMedia("(max-width: 880px)");
   function pickSrc(p) { return (mobileMQ.matches && p.srcMobile) ? p.srcMobile : p.src; }
 
+  // Precarga todas las fotos (las locales de movil son ligeras) para que,
+  // al avanzar el carrusel, la imagen ya este en cache del navegador y no
+  // haya una espera de red que deje el pie de foto desincronizado.
+  POSES.forEach((p) => {
+    if (p.srcMobile) { const pre = new Image(); pre.src = p.srcMobile; }
+    const pre2 = new Image(); pre2.src = p.src;
+  });
+
   const nameEl = document.querySelector(".pose3d-name");
   const subEl = document.querySelector(".pose3d-sanskrit-en");
   const descEl = document.querySelector(".pose3d-desc");
