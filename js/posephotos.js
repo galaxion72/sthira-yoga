@@ -15,36 +15,42 @@
       desc: "De pie, pies firmes, coronilla hacia el techo: el punto de partida y de llegada.",
       src: "https://images.unsplash.com/photo-1484452330304-377cdeb05340?auto=format&fit=crop&w=1200&q=80",
       alt: "Silueta de pie en una postura de yoga erguida",
+      pos: "55% 50%",
     },
     {
       name: "Urdhva Hastasana", sub: "Brazos elevados",
       desc: "Los brazos suben en arco, ligera extensión de la columna hacia atrás.",
       src: "https://images.unsplash.com/photo-1500904156668-758cff89dcff?auto=format&fit=crop&w=1200&q=80",
       alt: "Silueta con un brazo elevado al atardecer",
+      pos: "62% 50%",
     },
     {
       name: "Uttanasana", sub: "Flexión de pie",
       desc: "La cadera se pliega y el torso cae hacia adelante; las rodillas pueden ir suaves.",
       src: "https://images.unsplash.com/photo-1607914660217-754fdd90041d?auto=format&fit=crop&w=1200&q=80",
       alt: "Persona estirando el cuerpo hacia adelante",
+      pos: "50% 50%",
     },
     {
       name: "Ardha Uttanasana", sub: "Media elevación",
       desc: "La espalda se alarga en línea recta, la mirada busca el horizonte.",
       src: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80",
       alt: "Persona practicando una asana",
+      pos: "65% 50%",
     },
     {
       name: "Adho Mukha Svanasana", sub: "Perro boca abajo",
       desc: "La cadera se convierte en el punto más alto: una V invertida entre manos y pies.",
       src: "https://images.unsplash.com/photo-1767611115570-92e679b820ed?auto=format&fit=crop&w=1200&q=80",
       alt: "Mujer en postura de perro boca abajo",
+      pos: "50% 58%",
     },
     {
       name: "Balasana", sub: "Postura del niño",
       desc: "Cierre del ciclo: la cadera baja hacia los talones y el torso descansa sobre los muslos.",
       src: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80",
       alt: "Práctica de yoga al aire libre en una postura de descanso",
+      pos: "50% 38%",
     },
   ];
 
@@ -66,6 +72,7 @@
     const swap = () => {
       img.src = p.src;
       img.alt = p.alt;
+      img.style.objectPosition = p.pos || "50% 50%";
       if (bgImg) bgImg.src = p.src;
     };
     // pequeño crossfade: espera a que la imagen cargue antes de mostrarla
