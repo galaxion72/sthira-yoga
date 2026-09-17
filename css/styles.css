@@ -548,18 +548,15 @@ select option{ color: var(--ink); }
   opacity:0; transition: opacity .35s ease;
 }
 .pose3d-bg.loaded{ opacity:1; }
-/* En móvil la caja se vuelve más cuadrada y el recorte "cover" centrado
-   por defecto llegaba a cortar la postura (brazos/piernas extendidos).
-   Cada foto lleva ahora su propio encuadre (ver POSES.pos en
-   posephotos.js) para mantener el cuerpo completo dentro del recorte,
-   y los bordes superior e inferior se difuminan hacia el fondo
-   desenfocado de la misma imagen en vez de terminar en un corte duro. */
+/* En móvil se usan recortes verticales propios (ver POSES.srcMobile en
+   posephotos.js), ya encuadrados a mano para no cortar la postura. La
+   caja pasa a una proporción más vertical para encajarlos, con
+   object-fit:contain (nunca recorta) y el hueco que sobre arriba/abajo
+   se rellena con un fondo desenfocado de la misma foto. */
 @media (max-width: 880px){
+  .pose3d-canvas-wrap{ aspect-ratio: 4/5; min-height:0; }
   .pose3d-bg{ display:block; }
-  #pose-photo{
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
-    mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
-  }
+  #pose-photo{ object-fit:contain; }
 }
 .pose3d-caption{
   position:absolute; left:1.1rem; top:1.1rem; background: rgba(255,255,255,0.88);
