@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
-Sitemap: https://insideout.es/sitemap.xml
+Sitemap: https://www.insideout.es/sitemap.xml
