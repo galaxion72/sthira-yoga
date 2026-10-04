@@ -389,6 +389,11 @@ section{ padding: clamp(2.8rem,6vw,5rem) 0; }
 .pose-figure{ background: var(--cream-2); aspect-ratio: 3/2; display:flex; align-items:center; justify-content:center; padding: 1rem; }
 .pose-figure svg{ width:100%; height:100%; color: var(--ink); }
 .pose-figure.pose-photo{ padding:0; overflow:hidden; position:relative; }
+.pose-figure.pose-placeholder{
+  padding:0; overflow:hidden;
+  background: linear-gradient(145deg, var(--cream-2) 0%, #FFE6D2 55%, #F1E4FA 100%);
+}
+.pose-figure.pose-placeholder .pose-mark{ width:30%; height:auto; color: var(--orange); opacity:.5; }
 .pose-figure.pose-photo .pose-bg{
   position:absolute; inset:0; width:100%; height:100%; object-fit:fill;
   filter: blur(26px) saturate(1.15) brightness(0.97); transform: scale(1.06);
